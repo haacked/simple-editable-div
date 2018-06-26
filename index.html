@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Simple Editable Div</title>
+    <script src="utils.js"></script>
+    <script src="editable-div.js"></script>
+  	<link rel="stylesheet" href="editable-div.css">
+  </head>
+  <body>
+    <div style="width: 800px">
+      <div contenteditable="true" tabindex="0" role="textbox" aria-multiline="true" data-role="editable" class="textarea plaintext" aria-label="Join the discussion..." id="comment-div" data-target="message"></div>
+      <input type="hidden" name="message" id="message" value="" />
+      <button id="submit">Submit</button>
+    </div>
+  </body>
+  <script>
+    Haack.ready(function() {
+      Haack.get('submit').onclick = () => {
+        alert('The value of the "message" input is ' + Haack.get('message').value)
+      }
+    })
+  </script>
+</html>
